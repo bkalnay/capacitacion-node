@@ -1,8 +1,13 @@
 
+
 const fs = require('fs');
 const PATH = './';
 const letter = 'a';
 
+
+let getFiles = (p)=>{
+    return fs.readdirSync(p);
+}
 
 let printFiles = (p) =>{
     fs.readdir(p, (err, files)=>{
@@ -20,11 +25,6 @@ let printFilesSorted = (p) =>{
 
 let count = (p, letra) =>{
     let c = 0;
-    /*getFiles(p).forEach(element => {
-        if(element.startsWith(letra)){
-            c++;
-        }
-    });*/
     fs.readdir(p, (err, files)=>{
         if(err){
             console.log(err)
